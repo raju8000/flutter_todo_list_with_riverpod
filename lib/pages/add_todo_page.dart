@@ -21,9 +21,7 @@ class _AddTodoPageState extends State<AddTodoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Add new Todo"),
-      ),
+      appBar: AppBar(title: Text("Add new Todo"),),
       body: ListView(
         children: <Widget>[
           Padding(
@@ -32,28 +30,23 @@ class _AddTodoPageState extends State<AddTodoPage> {
               children: <Widget>[
                 TextField(
                   controller: todoTextController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Todo title',
-                  ),
+                  decoration: InputDecoration(border: OutlineInputBorder(), hintText: 'Todo title',),
                 ),
                 CheckboxListTile(
                   value: completeStatus,
+                  title: Text('Complete?'),
                   onChanged: (bool checked) {
                     setState(() {
                       completeStatus = checked;
                     });
                   },
-                  title: Text('Complete?'),
                 ),
-                Consumer(
-                    builder: (_, WidgetRef ref, __) {
-                    return ElevatedButton(
-                      onPressed:()=> onAdd(ref),
-                      child: Text("Add"),
-                    );
-                  }
-                ),
+                Consumer(builder: (_, WidgetRef ref, __) {
+                  return ElevatedButton(
+                    onPressed: () => onAdd(ref),
+                    child: Text("Add"),
+                  );
+                }),
               ],
             ),
           )
@@ -66,7 +59,7 @@ class _AddTodoPageState extends State<AddTodoPage> {
     final String todoTitle = todoTextController.text;
     final bool complete = completeStatus;
 
-    if(todoTitle.isNotEmpty){
+    if (todoTitle.isNotEmpty) {
       final Todo todo = Todo(title: todoTitle, completed: complete);
       ref.watch(todoNotifier).addTodo(todo);
     }

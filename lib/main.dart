@@ -8,17 +8,16 @@ import 'package:todos/pages/incomplete_todos_page.dart';
 void main() => runApp(ProviderScope(child: MyApp()));
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-        title: 'Flutter Todo',
+    return MaterialApp(
+      title: 'Flutter Todo',
       debugShowCheckedModeBanner: false,
-        theme: ThemeData(primarySwatch: Colors.blue, brightness: Brightness.light),
-        home: MyHomePage(
-          title: 'Todo App',
-        ),
-
+      theme:
+          ThemeData(primarySwatch: Colors.blue, brightness: Brightness.light),
+      home: MyHomePage(
+        title: 'Todo App',
+      ),
     );
   }
 }
@@ -50,15 +49,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
             bottom: TabBar(
               tabs: [
-                Tab(
-                  text: 'All',
-                ),
-                Tab(
-                  text: 'Complete',
-                ),
-                Tab(
-                  text: 'In Complete',
-                ),
+                Tab(text: 'All'),
+                Tab(text: 'Complete'),
+                Tab(text: 'In Complete'),
               ],
             ),
             title: Text(widget.title),
@@ -69,9 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
               CompleteTodos(),
               InCompleteTodos(),
             ],
-          )
-          // This trailing comma makes auto-formatting nicer for build methods.
-          ),
+          )),
     );
   }
 }

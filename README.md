@@ -8,7 +8,7 @@ This project is a starting point for a Flutter application in which a simple dem
 with help of Riverpod state management approach has been done.
 
 
-For Project explanation go to [devblog.link/flutter-with-provider-state-management](http://devblog.link/flutter-with-provider-state-management).
+For Project explanation go to [devblog.link/riverpod-state-management-in-flutter](http://devblog.link/riverpod-state-management-in-flutter/).
 
 #### _Find more blog related to flutter on [devblog.link](http://devblog.link/)_
 

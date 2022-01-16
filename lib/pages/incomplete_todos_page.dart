@@ -10,9 +10,8 @@ class InCompleteTodos extends ConsumerWidget {
     final List<Todo> inCompleteTodos = ref.watch(todoNotifier).inCompleteTodos;
 
     return Container(
-      child: TodoListView(
-        todos: inCompleteTodos,
-      )
-    );
+        child: TodoListView(
+      todos: inCompleteTodos,
+    ));
   }
 }

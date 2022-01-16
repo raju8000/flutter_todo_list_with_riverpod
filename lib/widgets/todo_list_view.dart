@@ -13,27 +13,23 @@ class TodoListView extends StatelessWidget {
     return Container(
       child: ListView.builder(
         itemBuilder: (BuildContext context, int index) => Consumer(
-          // 2. specify the builder and obtain a WidgetRef
             builder: (_, WidgetRef ref, __) {
-              final todoProvider = ref.watch(todoNotifier);
-            return ListTile(
-              title: Text(todos[index].title),
-              leading: Checkbox(
-                  value: todos[index].completed,
-                  onChanged: (bool checked) {
-                    todoProvider.toggleTodo(todos[index]);
-                  }),
-              trailing: IconButton(
-                  icon: Icon(
-                    Icons.delete,
-                    color: Colors.red,
-                  ),
-                  onPressed: () {
-                    todoProvider.deleteTodo(todos[index]);
-                  }),
-            );
-          }
-        ),
+          final todoProvider = ref.watch(todoNotifier);
+
+          return ListTile(
+            title: Text(todos[index].title),
+            leading: Checkbox(
+                value: todos[index].completed,
+                onChanged: (bool checked) {
+                  todoProvider.toggleTodo(todos[index]);
+                }),
+            trailing: IconButton(
+                icon: Icon(Icons.delete, color: Colors.red,),
+                onPressed: () {
+                  todoProvider.deleteTodo(todos[index]);
+                }),
+          );
+        }),
         itemCount: todos.length,
       ),
     );

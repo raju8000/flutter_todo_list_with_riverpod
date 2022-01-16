@@ -11,8 +11,7 @@ class CompleteTodos extends ConsumerWidget {
 
     return Container(
         child: TodoListView(
-          todos: completeTodos,
-        )
-    );
+      todos: completeTodos,
+    ));
   }
 }
